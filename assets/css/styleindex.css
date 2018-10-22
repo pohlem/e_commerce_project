@@ -1,0 +1,18 @@
+﻿body{
+	margin-top: 50px;
+}
+nav{
+	height: 50px
+	background-color: orange;
+}
+img{
+	height: 342px;
+	width: 242px;
+}
+.article{
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+body{
+	background-color: grey;
+}
