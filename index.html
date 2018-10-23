@@ -7,6 +7,8 @@
 	<meta name='author' content='Maxime Pohle, Mathieu Miot, Jérémie Meyer' />
 	<!-- Bootstrap core CSS -->
 	<link href='assets/bootstrap_v4.1.3/css/bootstrap.min.css' rel='stylesheet'>
+	<!-- Bootstrap Form Helpers -->
+	<link href="assets/winmarkltd-BootstrapFormHelpers-d6770e0/dist/css/bootstrap-formhelpers.min.css" rel="stylesheet" media="screen">
 	<!-- CSS-->
 	<link rel='stylesheet' type='text/css' href='assets/css/styleindex.css'>
 	<title>Hallocommerce</title>
@@ -77,6 +79,51 @@
 				<h1>Panier</h1>
 			</div>
 		</div>
+		<!--infos paiement -->
+		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalForm">
+		Passer la commande
+		</button>
+		<div class="modal fade" id="ModalForm" tabindex="-1" role="dialog" aria-labelledby="ModalFormTitle" aria-hidden="true">
+		  <div class="modal-dialog modal-dialog-centered" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h5 class="modal-title" id="FormTitle">Paiement :</h5>
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		          <span aria-hidden="true">&times;</span>
+		        </button>
+		      </div>
+					<form>
+		      <div class="modal-body">
+							<fieldset>
+								<div class="row">
+									<label class="col-6" for="firstName">Nom :</label>
+									<input class="col-5 form-control" id="firstName" name="firstName" >
+									<label class="col-6" for="lastName">Prénom :</label>
+									<input class="col-5 form-control" id="lastName" name="lastName">
+									<label class="col-6" for="email">Email :</label>
+									<input class="col-5 form-control" id="email" name="email" >
+									<label class="col-6" for="phone">Numéro de téléphone :</label>
+									<input class="col-5 form-control" id="phone"type="text" name="phone" >
+									<label class="col-6" for="address">Adresse :</label>
+									<input class="col-5 form-control" id="address"type="text" name="Address" >
+									<label class="col-6" for="postalCode">Code Postal :</label>
+									<input class="col-5 form-control" id="postalCode"type="text" name="postalCode" >
+									<label class="col-6" for="postalCode">Ville :</label>
+									<input class="col-5 form-control" id="city"type="text" name="city" >
+									<label class="col-6" for="postalCode">Pays :</label>
+									<div class="bfh-selectbox bfh-countries" data-country="US" data-flags="true">
+									</div>
+								</div>
+							</fieldset>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" id="confirm" class="btn btn-primary">Confirmer</button>
+		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+					</form>
+		      </div>
+		    </div>
+		  </div>
+		</div>
 		<!-- Part 4 : Contact-->
 		<div class='my-menus' id='contact' style='display: none;'>
 			<div class='row'>
@@ -89,5 +136,8 @@
 		<script src='assets/bootstrap_v4.1.3/js/bootstrap.min.js'></script>
 		<!-- My JavaScript file-->
 		<script src='assets/js/functionsIndex.js'></script>
+		<script src='assets/js/checkForm.js'></script>
+		<!-- Bootstrap Form Helpers -->
+		<script src="assets/winmarkltd-BootstrapFormHelpers-d6770e0/dist/js/bootstrap-formhelpers.min.js"></script>
 	</body>
-	</html>
+</html>
