@@ -1,40 +1,21 @@
-$( function(){
-  confirm =$('#confirm');
-  firstName = ValidName($('#firstName'));
-  lastName = ValidName($('#lastName'));
-  email = ValidMail($('#email'));
-  phone = ValidPhone($('#phone'));
-  address = ValidAddress($('#address'));
-  postalCode = ValidPC($('#postalCode'));
-  city = ValidName($('#city'));
-
-  $('#confirm').click(ValidationForm());
-
-  $('#firstName').blur(function(){
-    ValidName($('#firstName'));
-  });
-  $('#lastName').blur(function(){
-    ValidName($('#lastName'));
-  });
-  $('#email').blur(function(){
-    ValidMail($('#email'));
-  });
-  $('#phone').blur(function(){
-    ValidPhone($('#phone'));
-  });
-  $('#address').blur(function(){
-    ValidAddress($('#address'));
-  });
-  $('#postalCode').blur(function(){
-    ValidPC($('#postalCode'));
-  });
-  $('#city').blur(function(){
-    ValidName($('#city'));
-  });
-});
+function ValidPass(f1,f2)
+{
+  if(f1.val()!=f2.val())
+  {
+    colorize(f1,true);
+    colorize(f2, true);
+    return false;
+  }
+  else
+  {
+    colorize(f1, false);
+    colorize(f2, false);
+    return true;
+  }
+};
 
 function ValidationForm(){
-  if(firstName&&lastName&&email&&phone&&address&&postalCode)
+  if(firstName&&lastName&&email&&phone&&address&&postalCode&&pass)
     return true;
   else
     return false;
