@@ -7,7 +7,9 @@ $( function(){
   address = ValidAddress($('#address'));
   postalCode = ValidPC($('#postalCode'));
   city = ValidName($('#city'));
+
   $('#confirm').click(ValidationForm());
+
   $('#firstName').blur(function(){
     ValidName($('#firstName'));
   });
@@ -32,7 +34,6 @@ $( function(){
 });
 
 function ValidationForm(){
-console.log(phone);
   if(firstName&&lastName&&email&&phone&&address&&postalCode)
     return true;
   else
