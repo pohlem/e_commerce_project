@@ -6,9 +6,29 @@ $( function(){
   phone = ValidPhone($('#phone'));
   address = ValidAddress($('#address'));
   postalCode = ValidPC($('#postalCode'));
-
+  city = ValidName($('#city'));
   $('#confirm').click(ValidationForm());
-  $('input').blur(ValidationForm());
+  $('#firstName').blur(function(){
+    ValidName($('#firstName'));
+  });
+  $('#lastName').blur(function(){
+    ValidName($('#lastName'));
+  });
+  $('#email').blur(function(){
+    ValidMail($('#email'));
+  });
+  $('#phone').blur(function(){
+    ValidPhone($('#phone'));
+  });
+  $('#address').blur(function(){
+    ValidAddress($('#address'));
+  });
+  $('#postalCode').blur(function(){
+    ValidPC($('#postalCode'));
+  });
+  $('#city').blur(function(){
+    ValidName($('#city'));
+  });
 });
 
 function ValidationForm(){
@@ -32,7 +52,7 @@ function ValidPC(f){
 
 }
 function ValidPhone(f){
-  if(!/0[1-9]{1}[\s.]{0,1}[0-9]{2}[\s.]{0,1}[0-9]{2}[\s.]{0,1}[0-9]{2}[\s.]{0,1}[0-9]{2}/.test(f.val()))
+  if(!/^0[1-9]{1}[\s.]{0,1}[0-9]{2}[\s.]{0,1}[0-9]{2}[\s.]{0,1}[0-9]{2}[\s.]{0,1}[0-9]{2}$/.test(f.val()))
   {
     colorize(f,true);
     return false;
@@ -71,7 +91,7 @@ function ValidAddress(f)
 {
   reg1=/[0-9]{2},{0,1}(\sav){0,1}\.[a-zA-ZáàâäãåçéèêëíìîïñóòôöõúùûüýÿæœÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ \-]{3,}/;
   reg2=/[0-9]{2},{0,1}[a-zA-ZáàâäãåçéèêëíìîïñóòôöõúùûüýÿæœÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ \-]{3,}/;
-  if(!reg1.test(f.val())||!reg2.test(f.val()))
+  if(!reg1.test(f.val())&&!reg2.test(f.val()))
   {
     colorize(f,true);
     return false;
