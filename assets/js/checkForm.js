@@ -1,38 +1,3 @@
-$( function(){
-  confirm =$('#confirm');
-  firstName = ValidName($('#firstName'));
-  lastName = ValidName($('#lastName'));
-  email = ValidMail($('#email'));
-  phone = ValidPhone($('#phone'));
-  address = ValidAddress($('#address'));
-  postalCode = ValidPC($('#postalCode'));
-  city = ValidName($('#city'));
-
-  $('#confirm').click(ValidationForm());
-
-  $('#firstName').blur(function(){
-    ValidName($('#firstName'));
-  });
-  $('#lastName').blur(function(){
-    ValidName($('#lastName'));
-  });
-  $('#email').blur(function(){
-    ValidMail($('#email'));
-  });
-  $('#phone').blur(function(){
-    ValidPhone($('#phone'));
-  });
-  $('#address').blur(function(){
-    ValidAddress($('#address'));
-  });
-  $('#postalCode').blur(function(){
-    ValidPC($('#postalCode'));
-  });
-  $('#city').blur(function(){
-    ValidName($('#city'));
-  });
-});
-
 function ValidationForm(){
   if(firstName&&lastName&&email&&phone&&address&&postalCode)
     return true;
