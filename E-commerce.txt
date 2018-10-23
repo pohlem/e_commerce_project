@@ -1,6 +1,7 @@
-site e commerce
+﻿site e commerce
 panier valider plusieurs objets
 calculera total + TVA
 formulaire
 un bon de réduction avec un code
 responsive
+panier fenetre modale
