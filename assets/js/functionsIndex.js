@@ -1,17 +1,26 @@
-function showOneDiv(anID) {
-	/*Shows one div and hide others*/
-	var myMenus = document.querySelectorAll('.my-menus'),
-	i = 0, l = myMenus.length;
-	for (i; i < l; i++) {
-		myMenus[i].style.display = 'none';
-	}
-	var div = document.getElementById(anID);
-	div.style.display = "block";
-}
 
 $(function(){
 		price= 0;
+		//no article ? say it !
 	$('#cart').click(function(){
+		if(price==0)
+		{
+			if(!$('#FormTitle').hasClass('noArticle'))
+			{
+				$('#FormTitle').addClass('noArticle');
+			}
+		}
+		else
+		{
+			$('#FormTitle').removeClass('noArticle');
+			$('#FormTitle').html('Commande :')
+		}
+
+		if($('#FormTitle').hasClass('noArticle'))
+		{
+			$('#FormTitle').html(	$('#FormTitle').html()+'Votre panier est vide !');
+		}
+
 		$('#ModalForm').modal();
 	});
 
@@ -29,7 +38,7 @@ $(function(){
 			priceObject = parseFloat($('#price'+idButton).html());
 			price=parseFloat((price+(priceObject*quantity)).toFixed(2));
 			/*Add article in cart*/
-			$('.cart').html(contentsCart+'<div class="row text-center align-items-center cart'+idButton+'"><div class="col-xl-3 col-xs-10">'+name+'</div><div class="col-xl-2 col-xs-12"><input class="form-control" type="number" id="quantityCart'+idButton+'" class="quantityCart" value="'+quantity+'" min="0"></div><div class="col-xl-2 col-xs-12"><p>'+priceObject+'</p></div><div class="col-xl-3 col-xs-12"><span id="priceTotal'+idButton+'">'+quantity*priceObject+'</span></div><div class="col-xl-2 col-xs-12"><input type="button" id="cart'+idButton+'" class="btn btn-warning remove" value="Enlever article"></div></div>');
+			$('.cart').html(contentsCart+'<div class="row text-center align-items-center cart'+idButton+'"><div class="col-xl-3 col-xs-12">'+name+'</div><div class="col-xl-2 col-xs-12"><input class="form-control" type="number" id="quantityCart'+idButton+'" class="quantityCart" value="'+quantity+'" min="0"></div><div class="col-xl-2 col-xs-12"><p>'+priceObject+'</p></div><div class="col-xl-3 col-xs-12"><span id="priceTotal'+idButton+'">'+quantity*priceObject+'</span></div><div class="col-xl-2 col-xs-12"><input type="button" id="cart'+idButton+'" class="col-12 btn btn-warning remove" value="Enlever article"></div></div>');
 			$('#priceTotal').html(price);
 			/*Button who removes the article in the cart*/
 			$('.remove').click(function(){

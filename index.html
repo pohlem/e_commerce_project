@@ -29,13 +29,13 @@
 			<div class='collapse navbar-collapse' id='navigation' >
 				<ul class='navbar-nav mr-auto mt-2 mt-lg-0'>
 					<li class='nav-item'>
-						<a class='nav-link' data-toggle='collapse'  data-target='.navbar-collapse.show' href='#articles' onclick='showOneDiv("articles")'>Articles</a>
+						<a class='nav-link' data-toggle='collapse'  data-target='.navbar-collapse.show' href='#articles'>Articles</a>
 					</li>
 					<li class='nav-item'>
-						<a class='nav-link' data-toggle='collapse'  data-target='.navbar-collapse.show' href='#panier' onclick='showOneDiv("cart")'>Panier</a>
+						<a class='nav-link' data-toggle='collapse'  data-target='.navbar-collapse.show' href='#panier' id='cart'>Panier</a>
 					</li>
 					<li class='nav-item'>
-						<a class='nav-link' data-toggle='collapse' data-target='.navbar-collapse.show' href='#contact' onclick='showOneDiv("contact")'>Contact</a>
+						<a class='nav-link' data-toggle='collapse' data-target='.navbar-collapse.show' href='#contact'>Contact</a>
 					</li>
 				</ul>
 			</div>
@@ -127,7 +127,7 @@
 			</div>
 		</div>
 		<!-- Part 3 : Panier-->
-		<div class='modal fade' id='ModalForm' tabindex='-1' role='dialog' aria-labelledby='ModalFormTitle' aria-hidden='true'>
+		<div class='modal fade noArticle' id='ModalForm' tabindex='-1' role='dialog' aria-labelledby='ModalFormTitle' aria-hidden='true'>
 			<div class='modal-dialog modal-dialog-centered modal-lg' role='document'>
 				<div class='modal-content'>
 					<div class='modal-header'>
@@ -196,13 +196,14 @@
 				</div>
 			</div>
 		</div>
-		<!-- Part 4 : Contact-->
-		<div class='my-menus' id='contact' style='display: none;'>
-			<div class='row'>
-				<h5>Contact</h5>
-			</div>
+	</div>
+	<!-- Part 4 : Contact-->
+	<div class='my-menus' id='contact' style='display:none;'>
+		<div class='row'>
+			<h5>Contact</h5>
 		</div>
 	</div>
+
 	<footer>
 		<p><strong>CONDITION GENERALE DE VENTE</strong></p>
 		<div class="madeIn"><p>créer par Jérémie Meyer, Maxime Pohle et Mathieu Miot</p>
