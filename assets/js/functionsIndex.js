@@ -44,7 +44,7 @@ $(function(){
 			$('.remove').click(function(){
 				currentArticle = this.id.substring(4);
 				price-=parseFloat($('#priceTotal'+currentArticle).html());
-				price=price.toFixed(2);
+				price=parseFloat(price.toFixed(2));
 				$('.'+this.id).remove();
 				$("#"+currentArticle).attr("disabled",false);
 				$("#quantity"+currentArticle).attr("disabled",false);

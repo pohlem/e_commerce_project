@@ -28,7 +28,15 @@ footer{
 }
 nav{
 	height: 50px
-	background-color: orange;
+  background-color: transparent;
+  color: white;
+  text-shadow:0 0 3px black;
+  background-image: url("../img/halloween.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+.nav-link{
+  color: white !important;
 }
 .cart{
 	width:100%;
@@ -38,23 +46,13 @@ nav{
 .navbar {
 	margin-bottom: 0;
 	border-radius: 0;
-  background-position: center;
-  height: 10vh;
   max-width: 100vw;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  margin-top: -5px;
+  background-color: #f9b02d;
 }
 .carousel-inner img {
 	width: 100%; /* Set width to 100% */
 	margin: auto;
 	min-height:200px;
-}
-
-
-.navbar {
-background-image: url('img/Happy-Halloween.jpg');
-
 }
 .backgroundImage{
     max-width: 100vw;
