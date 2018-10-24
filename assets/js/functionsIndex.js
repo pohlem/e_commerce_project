@@ -24,7 +24,7 @@ $(function(){
 		promoUse=false;
 		totalPriceBeforePromo=0;
 		//no article ? say it !
-	$('#cart').click(function(){
+	$('#navCart').click(function(){
 		res = checkArticle();
 		if(res == false){
 			$('#promo').hide();
