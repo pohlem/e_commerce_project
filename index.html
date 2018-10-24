@@ -8,7 +8,7 @@
 	<!-- Bootstrap core CSS -->
 	<link href='assets/bootstrap_v4.1.3/css/bootstrap.min.css' rel='stylesheet'>
 	<!-- Bootstrap Form Helpers -->
-	<link href="assets/winmarkltd-BootstrapFormHelpers-d6770e0/dist/css/bootstrap-formhelpers.min.css" rel="stylesheet" media="screen">
+	<link href='assets/winmarkltd-BootstrapFormHelpers-d6770e0/dist/css/bootstrap-formhelpers.min.css' rel='stylesheet' media='screen'>
 	<!-- CSS-->
 	<link rel='stylesheet' type='text/css' href='assets/css/styleindex.css'>
 	<!-- JQuery-->
@@ -29,59 +29,59 @@
 				<div class='collapse navbar-collapse' id='navigation' >
 					<ul class='navbar-nav mr-auto mt-2 mt-lg-0'>
 						<li class='nav-item'>
-							<a class='nav-link' data-toggle='collapse'  data-target='.navbar-collapse.show' href='#articles' onclick='showOneDiv("articles")'>Articles</a>
+							<a class='nav-link' data-toggle='collapse'  data-target='.navbar-collapse.show' href='#articles' onclick='showOneDiv('articles')'>Articles</a>
 						</li>
 						<li class='nav-item'>
-							<a class='nav-link' data-toggle='collapse'  data-target='.navbar-collapse.show' href='#panier' onclick='showOneDiv("cart")'>Panier</a>
+							<a class='nav-link' data-toggle='collapse'  data-target='.navbar-collapse.show' href='#panier' id='cart' >Panier</a>
 						</li>
 						<li class='nav-item'>
-							<a class='nav-link' data-toggle='collapse' data-target='.navbar-collapse.show' href='#contact' onclick='showOneDiv("contact")'>Contact</a>
+							<a class='nav-link' data-toggle='collapse' data-target='.navbar-collapse.show' href='#contact' onclick='showOneDiv('contact')'>Contact</a>
 						</li>
 					</ul>
 				</div>
 			</nav>
 		</header>
 		<!--Part 1 : Promo-->
-		<div id="promoCarousel" class="carousel slide" data-ride="carousel">
+		<div id='promoCarousel' class='carousel slide' data-ride='carousel'>
 
 		  <!-- Indicators -->
-		  <ul class="carousel-indicators">
-		    <li data-target="#promoCarousel" data-slide-to="0" class="active"></li>
-		    <li data-target="#promoCarousel" data-slide-to="1"></li>
-		    <li data-target="#promoCarousel" data-slide-to="2"></li>
+		  <ul class='carousel-indicators'>
+		    <li data-target='#promoCarousel' data-slide-to='0' class='active'></li>
+		    <li data-target='#promoCarousel' data-slide-to='1'></li>
+		    <li data-target='#promoCarousel' data-slide-to='2'></li>
 		  </ul>
 
 		  <!-- The slideshow -->
-		  <div class="carousel-inner">
-		    <div class="carousel-item active">
+		  <div class='carousel-inner'>
+		    <div class='carousel-item active'>
 					<h3> c'est mortel Halloween !</h3>
 
 		    </div>
-		    <div class="carousel-item">
+		    <div class='carousel-item'>
 					<h3>les vampires sont en promo toute l'année !</h3>
 		    </div>
-		    <div class="carousel-item">
+		    <div class='carousel-item'>
 					<h3> sur Hallocommerce c'est mortel toute l'année !</h3>
 		    </div>
 		  </div>
 
 		  <!-- Left and right controls -->
-		  <a class="carousel-control-prev" href="#promoCarousel" data-slide="prev">
-		    <span class="carousel-control-prev-icon"></span>
+		  <a class='carousel-control-prev' href='#promoCarousel' data-slide='prev'>
+		    <span class='carousel-control-prev-icon'></span>
 		  </a>
-		  <a class="carousel-control-next" href="#promoCarousel" data-slide="next">
-		    <span class="carousel-control-next-icon"></span>
+		  <a class='carousel-control-next' href='#promoCarousel' data-slide='next'>
+		    <span class='carousel-control-next-icon'></span>
 		  </a>
 		</div>
 
 	    <!-- Left and right controls -->
-	    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-	      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-	      <span class="sr-only">Avant</span>
+	    <a class='left carousel-control' href='#myCarousel' role='button' data-slide='prev'>
+	      <span class='glyphicon glyphicon-chevron-left' aria-hidden='true'></span>
+	      <span class='sr-only'>Avant</span>
 	    </a>
-	    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-	      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-	      <span class="sr-only">Après</span>
+	    <a class='right carousel-control' href='#myCarousel' role='button' data-slide='next'>
+	      <span class='glyphicon glyphicon-chevron-right' aria-hidden='true'></span>
+	      <span class='sr-only'>Après</span>
 	    </a>
 	</div>
 
@@ -89,116 +89,109 @@
 		<div class='my-menus' id='articles'>
 			<div class='row'>
 				<div class='col-12'>
-					<h1>Articles</h1>
+					<h5>Articles</h5>
 				</div>
 				<div class='col-xl-4 col-xs-12 text-center article'>
-					<div id="nameTagada">
+					<div id='nameTagada'>
 						<img src='assets/img/tagada.png'>
 						<p>Fraise Tagada 200g</p>
 					</div>
 					<p>Prix</p>
-					<span id="priceTagada">24.59</span>
+					<span id='priceTagada'>24.59</span>
 					<span>euros<div></div></span>
-					<label for='quantity'>Quantité : </label><input type='number' id='quantityTagada' name="quantity" value="1" min="1">
+					<label for='quantity'>Quantité : </label><input type='number' id='quantityTagada' name='quantity' value='1' min='1'>
 					<input type='button' id='Tagada' class='add' value='Ajout au panier'>
 				</div>
 				<div class='col-xl-4 col-xs-12 text-center article'>
-					<div id="nameSorciere">
+					<div id='nameSorciere'>
 						<img src=''>
 						<p>Costume Sorcière</p>
 					</div>
 					<p>Prix</p>
-					<span id="priceSorciere">10.51</span>
+					<span id='priceSorciere'>10.51</span>
 					<span>euros<div></div></span>
-					<label for='quantity'>Quantité : </label><input type='number' id='quantitySorciere' name="quantity" value="1" min="1">
+					<label for='quantity'>Quantité : </label><input type='number' id='quantitySorciere' name='quantity' value='1' min='1'>
 					<input type='button' id='Sorciere' class='add' value='Ajout au panier'>
 				</div>
 				<div class='col-xl-4 col-xs-12 text-center article'>
-					<div id="nameTest">
+					<div id='nameTest'>
 						<img src=''>
 						<p>Costume Test</p>
 					</div>
 					<p>Prix</p>
-					<span id="priceTest">30.51</span>
+					<span id='priceTest'>30.51</span>
 					<span>euros<div></div></span>
-					<label for='quantity'>Quantité : </label><input type='number' id='quantityTest' name="quantity" value="1" min="1">
+					<label for='quantity'>Quantité : </label><input type='number' id='quantityTest' name='quantity' value='1' min='1'>
 					<input type='button' id='Test' class='add' value='Ajout au panier'>
 				</div>
 			</div>
 		</div>
 		<!-- Part 3 : Panier-->
-		<div class='my-menus' id='cart' style='display: none;'>
-			<div class='row text-center'>
-				<div class="col-12">
-					<h1>Panier</h1>
-				</div>
-				<div class="col-3">
-					<h2>Nom</h2>
-				</div>
-				<div class="col-2">
-					<h2>Quantite</h2>
-				</div>
-				<div class="col-2">
-					<h2>Prix</h2>
-				</div>
-				<div class="col-3">
-					<h2>Total Prix Article</h2>
-				</div>
-			</div>
-			<div class='cart'></div>
-			<div class='row text-center'>
-				<div class="col-6">
-					<h1>Total Prix : </h1>
-					<span id='priceTotal'>0</span><span> euros</span>
-				</div>
-				<div class="col-6">
-					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalForm">
-						Valider la commande
-					</button>
-					<div class="modal fade" id="ModalForm" tabindex="-1" role="dialog" aria-labelledby="ModalFormTitle" aria-hidden="true">
-						<div class="modal-dialog modal-dialog-centered" role="document">
-							<div class="modal-content">
-								<div class="modal-header">
-									<h5 class="modal-title" id="FormTitle">Commande :</h5>
-									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-										<span aria-hidden="true">&times;</span>
-									</button>
-								</div>
-								<form>
-									<div class="modal-body">
-										<fieldset>
-											<div class="row">
-												<label class="col-5" for="firstName">Nom :</label>
-												<input class="col-6 form-control" id="firstName" name="firstName" >
-												<label class="col-5" for="lastName">Prénom :</label>
-												<input class="col-6 form-control" id="lastName" name="lastName">
-												<label class="col-5" for="email">Email :</label>
-												<input class="col-6 form-control" id="email" name="email" >
-												<label class="col-5" for="phone">Numéro de téléphone :</label>
-												<input class="col-6 form-control" id="phone"type="text" name="phone" >
-												<label class="col-5" for="address">Adresse :</label>
-												<input class="col-6 form-control" id="address"type="text" name="Address" >
-												<label class="col-5" for="postalCode">Code Postal :</label>
-												<input class="col-6 form-control" id="postalCode"type="text" name="postalCode" >
-												<label class="col-5" for="postalCode">Ville :</label>
-												<input class="col-6 form-control" id="city"type="text" name="city" >
-												<label class="col-5" for="postalCode">Pays :</label>
-												<div class="bfh-selectbox bfh-countries" data-country="FR" data-flags="true">
-												</div>
-												<label class="col-5" for="password">Mot de passe :</label>
-												<input id="password" class="col-6 form-control" type="password">
-												<label class="col-5" for="confirmPass">Confirmer le mot de passe :</label>
-												<input id="confirmPass" class="col-6 form-control" type="password">
-											</div>
-										</fieldset>
+		<div class='modal fade' id='ModalForm' tabindex='-1' role='dialog' aria-labelledby='ModalFormTitle' aria-hidden='true'>
+			<div class='modal-dialog modal-dialog-centered modal-lg' role='document'>
+				<div class='modal-content'>
+					<div class='modal-header'>
+						<h5 class='modal-title' id='FormTitle'>Commande :</h5>
+						<button type='button' class='close' data-dismiss='modal' aria-label='Close'>
+							<span aria-hidden='true'>&times;</span>
+						</button>
+					</div>
+						<div class='modal-body'>
+							<div class='my-menus' id='cart'>
+								<div class='row text-center'>
+									<div class='col-12'>
+										<h5>Panier</h5>
 									</div>
-									<div class="modal-footer">
-										<button type="button" id="confirm" class="btn btn-primary">Confirmer</button>
-										<button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-									</form>
+									<div class='col-3'>
+										<h5>Nom</h5>
+									</div>
+									<div class='col-3'>
+										<h5>Quantité</h5>
+									</div>
+									<div class='col-2'>
+										<h5>Prix</h5>
+									</div>
+									<div class='col-3'>
+										<h5>Total Prix Article</h5>
+									</div>
 								</div>
-							</div>
+								<div class='cart'></div>
+								<div class='row text-center'>
+									<div class='col-6'>
+										<p>Total Prix : </p>
+										<span id='priceTotal'>0</span><span> euros</span>
+									</div>
+					<form>
+							<fieldset>
+								<div class='row'>
+									<label class='col-5' for='firstName'>Nom :</label>
+									<input class='col-6 form-control' id='firstName' name='firstName' >
+									<label class='col-5' for='lastName'>Prénom :</label>
+									<input class='col-6 form-control' id='lastName' name='lastName'>
+									<label class='col-5' for='email'>Email :</label>
+									<input class='col-6 form-control' id='email' name='email' >
+									<label class='col-5' for='phone'>Numéro de téléphone :</label>
+									<input class='col-6 form-control' id='phone'type='text' name='phone' >
+									<label class='col-5' for='address'>Adresse :</label>
+									<input class='col-6 form-control' id='address'type='text' name='Address' >
+									<label class='col-5' for='postalCode'>Code Postal :</label>
+									<input class='col-6 form-control' id='postalCode'type='text' name='postalCode' >
+									<label class='col-5' for='postalCode'>Ville :</label>
+									<input class='col-6 form-control' id='city'type='text' name='city' >
+									<label class='col-5' for='postalCode'>Pays :</label>
+									<div class='offset-3 col-6 bfh-selectbox bfh-countries' data-country='FR' data-flags='true'>
+									</div>
+									<label class='col-5' for='password'>Mot de passe :</label>
+									<input id='password' class='col-6 form-control' type='password'>
+									<label class='col-5' for='confirmPass'>Confirmer le mot de passe :</label>
+									<input id='confirmPass' class='col-6 form-control' type='password'>
+								</div>
+							</fieldset>
 						</div>
+						<div class='modal-footer'>
+							<button type='button' id='confirm' class='btn btn-primary'>Confirmer</button>
+							<button type='button' class='btn btn-secondary' data-dismiss='modal'>Fermer</button>
+					</form>
 					</div>
 				</div>
 			</div>
@@ -206,7 +199,7 @@
 		<!-- Part 4 : Contact-->
 		<div class='my-menus' id='contact' style='display: none;'>
 			<div class='row'>
-				<h1>Contact</h1>
+				<h5>Contact</h5>
 			</div>
 		</div>
 	</div>
@@ -217,7 +210,7 @@
 	<!-- My JavaScript file-->
 	<script src='assets/js/checkForm.js'></script>
 	<!-- Bootstrap Form Helpers -->
-	<script src="assets/winmarkltd-BootstrapFormHelpers-d6770e0/dist/js/bootstrap-formhelpers.min.js"></script>
+	<script src='assets/winmarkltd-BootstrapFormHelpers-d6770e0/dist/js/bootstrap-formhelpers.min.js'></script>
 	<!-- My JavaScript file-->
 	<script src='assets/js/functionsIndex.js'></script>
 </body>
