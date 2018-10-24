@@ -1,10 +1,10 @@
 button{
   color: black;
   background-color: #f9b02d;
-  width: 50px;
+  width: 25%;
   border-radius: 9px;
   border: solid 2px #f9b02d;
-  height: 40px;
+  height: 12%;
 
 }
 input {
@@ -18,7 +18,13 @@ footer{
   height: 10vh;
   width: 100vw;
   background-color:  #f9b02d;
-  margin-left: -19%;
+  color: black;
+  text-align: center;
+  vertical-align: middle;
+}
+.madeIn{
+  color: black;
+  font-size: 0.5em;
 }
 nav{
 	height: 50px
