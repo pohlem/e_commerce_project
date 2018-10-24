@@ -1,32 +1,54 @@
 function checkArticle(){
+	res = false;
 	if(price==0)
 	{
 		if(!$('#FormTitle').hasClass('noArticle'))
 		{
 			$('#FormTitle').addClass('noArticle');
 		}
-	}
-	else
-	{
+	} else {
 		$('#FormTitle').removeClass('noArticle');
 		$('#FormTitle').html('Commande :')
+		res=true;
 	}
 
 	if($('#FormTitle').hasClass('noArticle'))
 	{
-		$('#FormTitle').html('Commande :Votre panier est vide !');
+		$('#FormTitle').html('Commande : Votre panier est vide !');
 	}
+	return res;
 }
 
 $(function(){
 		price= 0;
+		promoUse=false;
+		totalPriceBeforePromo=0;
 		//no article ? say it !
 	$('#cart').click(function(){
-		checkArticle();
-
+		res = checkArticle();
+		if(res == false){
+			$('#promo').hide();
+		} else {
+			$('#promo').show();
+		}
 		$('#ModalForm').modal();
 	});
-
+	$('#validPromo').click(function(){
+		if(promoUse){
+			alert('Promo déjà utilisé');
+		} else {
+		valuePromo = $('#promotion').val();
+		if(valuePromo=="reduclamanu"){
+			alert('Promo -20%')
+		totalPriceBeforePromo=parseFloat(parseFloat($('#priceTotal').html()).toFixed(2));
+		priceTotal=totalPriceBeforePromo-(totalPriceBeforePromo*(1/5));
+		$('#priceTotal').html(priceTotal);
+		promoUse=true;
+		} else {
+			alert('Fausse promo');
+		}
+	}
+	});
 	$('.add').click(function(){
 		/*Collect all the elments needed in the cart*/
 		contentsCart = $('.cart').html();
@@ -41,7 +63,7 @@ $(function(){
 			priceObject = parseFloat($('#price'+idButton).html());
 			price=parseFloat((price+(priceObject*quantity)).toFixed(2));
 			/*Add article in cart*/
-			$('.cart').html(contentsCart+'<div class="row text-center align-items-center cart'+idButton+'"><div class="col-xl-3 col-xs-12">'+name+'</div><div class="col-xl-2 col-xs-12"><input class="form-control" type="number" id="quantityCart'+idButton+'" class="quantityCart" value="'+quantity+'" min="0"></div><div class="col-xl-2 col-xs-12"><p>'+priceObject+'</p></div><div class="col-xl-3 col-xs-12"><span id="priceTotal'+idButton+'">'+quantity*priceObject+'</span></div><div class="col-xl-2 col-xs-12"><input type="button" id="cart'+idButton+'" class="col-12 btn btn-warning remove" value="Enlever article"></div></div>');
+			$('.cart').html(contentsCart+'<div class="row text-center align-items-center cart'+idButton+'"><div class="col-xl-3 col-xs-12">'+name+'</div><div class="col-xl-2 col-xs-12"><input class="form-control quantityCart" type="number" id="quantityCart'+idButton+'" value="'+quantity+'" min="0"></div><div class="col-xl-2 col-xs-12"><p>'+priceObject+'</p></div><div class="col-xl-3 col-xs-12"><span id="priceTotal'+idButton+'">'+quantity*priceObject+'</span></div><div class="col-xl-2 col-xs-12"><input type="button" id="cart'+idButton+'" class="col-12 btn btn-warning remove" value="Enlever article"></div></div>');
 			$('#priceTotal').html(price);
 			/*Button who removes the article in the cart*/
 			$('.remove').click(function(){
@@ -55,10 +77,16 @@ $(function(){
 				checkArticle();
 			});
 			$('.quantityCart').keyup(function(){
+				console.log('ok');
 				currentArticle = this.id.substring(12);
 				priceArticle = parseFloat($('#price'+idButton).html());
 				priceTotalArticleBefore=parseFloat($('#priceTotal'+currentArticle).html());
 				priceTotal=parseFloat($('#priceTotal').html());
+				if(totalPriceBeforePromo!=priceTotal && totalPriceBeforePromo!=0){
+					priceTotal=totalPriceBeforePromo;
+					promoUse=false;
+					totalPriceBeforePromo=0;
+				}
 				currentQuantity = $("#quantityCart"+currentArticle).val();
 				$('#priceTotal'+currentArticle).html(priceArticle*currentQuantity);
 				priceTotal=parseFloat((priceTotal+((priceArticle*currentQuantity)-priceTotalArticleBefore)).toFixed(2));

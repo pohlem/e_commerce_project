@@ -58,7 +58,7 @@
 						<img src='assets/img/mug-zombie.jpg' class='imagerArticle'>
 						<p><strong>MUG ZOMBIE</strong></p></div>
 						<span id="priceZombie">15</span><strong>$</strong>
-						<label for='quantity'>Quantité :&nbsp;</label><input type='number' id='quantityZombie' name="quantity" value="1" min="1">
+						<label for='quantity'>Quantité : </label><input type='number' id='quantityZombie' name="quantity" value="1" min="1">
 						<button id="Zombie" class="add"  value='Ajout au panier'class='buttonFont'><img src="assets/img/cart.png" /></button>
 					</div>
 					<div class='col-xl-3 col-xs-12 text-center article'>
@@ -66,7 +66,7 @@
 							<img src='assets/img/carafe-crane.jpg'class='imagerArticle'>
 							<p><strong>CARAFE CRANE</strong></p></div>
 							<strong id="priceCarafe">15</strong><strong>$</strong>
-							<label for='quantity'>Quantité :&nbsp;</label><input type='number' id='quantityCarafe' name="quantity" value="1" min="1">
+							<label for='quantity'>Quantité : </label><input type='number' id='quantityCarafe' name="quantity" value="1" min="1">
 							<button id="Carafe" class="add"  value='Ajout au panier'class='buttonFont'><img src="assets/img/cart.png" /></button>
 						</div>
 						<div class='col-xl-3 col-xs-12 text-center article '>
@@ -74,7 +74,7 @@
 								<img src='assets/img/sous-verres-sos-fantomes.jpg' class='imagerArticle'>
 								<p><strong>SOUS VERRE</strong></p></div>
 								<strong id="priceVerre">15</strong><strong>$</strong>
-								<label for='quantity'>Quantité :&nbsp;</label><input type='number' id='quantityVerre' name="quantity" value="1" min="1">
+								<label for='quantity'>Quantité : </label><input type='number' id='quantityVerre' name="quantity" value="1" min="1">
 								<button id="Verre" class="add"  value='Ajout au panier'class='buttonFont'><img src="assets/img/cart.png" /></button>
 							</div>
 						</div>
@@ -86,7 +86,7 @@
 									<img src='assets/img/decapsuleur-logo-ghostbusters.jpg'class='imagerArticle'>
 									<p><strong>DECAPSULEUR</strong></p></div>
 									<strong id="priceDeca">15</strong><strong>$</strong>
-									<label for='quantity'>Quantité :&nbsp;</label><input type='number' id='quantityDeca' name="quantity" value="1" min="1">
+									<label for='quantity'>Quantité : </label><input type='number' id='quantityDeca' name="quantity" value="1" min="1">
 									<button id="Deca" class="add"  value='Ajout au panier'class='buttonFont'><img src="assets/img/cart.png" /></button>
 								</div>
 								<div class='row'>
@@ -97,7 +97,7 @@
 											<img src='assets/img/sweat-jack-skellington-pour-femme-l-etrange-noel-de-monsieur-jack.jpg'class=imagerArticle >
 											<p><strong>SWEAT</strong></p></div>
 											<strong id="priceJack">15</strong><strong>$</strong>
-											<label for='quantity'>Quantité :&nbsp;</label><input type='number' id='quantityJack' name="quantity" value="1" min="1">
+											<label for='quantity'>Quantité : </label><input type='number' id='quantityJack' name="quantity" value="1" min="1">
 											<button id="Jack" class="add"  value='Ajout au panier'class='buttonFont'><img src="assets/img/cart.png" /></button>
 										</div>
 										<div class='col-xl-3 col-xs-12 text-center article'>
@@ -105,7 +105,7 @@
 												<img src='assets/img/t-shirt-pennywise-it.jpg' class='imagerArticle'>
 												<p><strong>T-SHIRT</strong></p></div>
 												<strong id="pricePennywis">15</strong><strong>$</strong>
-												<label for='quantity'>Quantité :&nbsp;</label><input type='number' id='quantityPennywis' name="quantity" value="1" min="1">
+												<label for='quantity'>Quantité : </label><input type='number' id='quantityPennywis' name="quantity" value="1" min="1">
 												<button id="Pennywis" class="add"  value='Ajout au panier'class='buttonFont'><img src="assets/img/cart.png" /></button>
 											</div>
 											<div class='col-xl-3 col-xs-12 text-center article'>
@@ -113,7 +113,7 @@
 													<img src='assets/img/nain-de-jardin-zombie.jpg'class='imagerArticle'>
 													<p><strong>NAIN DE JARDIN</strong></p></div>
 													<strong id="priceNain">15</strong><strong>$</strong>
-													<label for='quantity'>Quantité :&nbsp;</label><input type='number' id='quantityNain' name="quantity" value="1" min="1">
+													<label for='quantity'>Quantité : </label><input type='number' id='quantityNain' name="quantity" value="1" min="1">
 													<button id="Nain" class="add"  value='Ajout au panier'class='buttonFont'><img src="assets/img/cart.png" /></button>
 												</div>
 											</div>
@@ -142,7 +142,7 @@
 														<div class='col-3'>
 															<h5>Quantité</h5>
 														</div>
-														<div class='col-2'>
+														<div class='col-2'> 
 															<h5>Prix</h5>
 														</div>
 														<div class='col-3'>
@@ -154,6 +154,10 @@
 														<div class='col-6'>
 															<p>Total Prix : </p>
 															<span id='priceTotal'>0</span><span> euros</span>
+														</div>
+														<div id='promo' class='col-6'>
+															<label for='quantity'>Code Promo :</label><input type='text' id='promotion' name='promotion' placeholder='Code'>
+															<input type='button' id='validPromo' name='validPromo' value="Vérifier">
 														</div>
 														<form>
 															<fieldset>
