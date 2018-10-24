@@ -1,4 +1,6 @@
 @font-face{
   font-family: 'Scary-Halloween-Font';
-  src: url('assets/font-family/Scary Halloween Font.ttf')
+  src: url('../font-family/Scary Halloween Font.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
