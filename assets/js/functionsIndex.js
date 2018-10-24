@@ -21,7 +21,7 @@ function checkArticle(){
 $(function(){
 		price= 0;
 		//no article ? say it !
-	$('#cart').click(function(){
+	$('#navCart').click(function(){
 		checkArticle();
 
 		$('#ModalForm').modal();
