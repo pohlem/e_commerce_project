@@ -113,6 +113,17 @@
 					<label for='quantity'>Quantité : </label><input type='number' id='quantitySorciere' name="quantity" value="1" min="1">
 					<input type='button' id='Sorciere' class='add' value='Ajout au panier'>
 				</div>
+				<div class='col-xl-4 col-xs-12 text-center article'>
+					<div id="nameTest">
+						<img src=''>
+						<p>Costume Test</p>
+					</div>
+					<p>Prix</p>
+					<span id="priceTest">30.51</span>
+					<span>euros<div></div></span>
+					<label for='quantity'>Quantité : </label><input type='number' id='quantityTest' name="quantity" value="1" min="1">
+					<input type='button' id='Test' class='add' value='Ajout au panier'>
+				</div>
 			</div>
 		</div>
 		<!-- Part 3 : Panier-->
@@ -124,72 +135,70 @@
 				<div class="col-3">
 					<h2>Nom</h2>
 				</div>
-				<div class="col-3">
+				<div class="col-2">
 					<h2>Quantite</h2>
 				</div>
-				<div class="col-3">
+				<div class="col-2">
 					<h2>Prix</h2>
 				</div>
 				<div class="col-3">
 					<h2>Total Prix Article</h2>
 				</div>
 			</div>
-			<div class='row text-center align-items-center cart'></div>
+			<div class='cart'></div>
 			<div class='row text-center'>
 				<div class="col-6">
 					<h1>Total Prix : </h1>
 					<span id='priceTotal'>0</span><span> euros</span>
 				</div>
 				<div class="col-6">
-					<input type="button" id="validCommand" name="validCommand" value="Validez la commande">
-				</div>
-			</div>
-		</div>
-		<!--infos commande -->
-		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalForm">
-			Passer la commande
-		</button>
-		<div class="modal fade" id="ModalForm" tabindex="-1" role="dialog" aria-labelledby="ModalFormTitle" aria-hidden="true">
-			<div class="modal-dialog modal-dialog-centered" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h5 class="modal-title" id="FormTitle">Commande :</h5>
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-						</button>
-					</div>
-					<form>
-						<div class="modal-body">
-							<fieldset>
-								<div class="row">
-									<label class="col-5" for="firstName">Nom :</label>
-									<input class="col-6 form-control" id="firstName" name="firstName" >
-									<label class="col-5" for="lastName">Prénom :</label>
-									<input class="col-6 form-control" id="lastName" name="lastName">
-									<label class="col-5" for="email">Email :</label>
-									<input class="col-6 form-control" id="email" name="email" >
-									<label class="col-5" for="phone">Numéro de téléphone :</label>
-									<input class="col-6 form-control" id="phone"type="text" name="phone" >
-									<label class="col-5" for="address">Adresse :</label>
-									<input class="col-6 form-control" id="address"type="text" name="Address" >
-									<label class="col-5" for="postalCode">Code Postal :</label>
-									<input class="col-6 form-control" id="postalCode"type="text" name="postalCode" >
-									<label class="col-5" for="postalCode">Ville :</label>
-									<input class="col-6 form-control" id="city"type="text" name="city" >
-									<label class="col-5" for="postalCode">Pays :</label>
-									<div class="bfh-selectbox bfh-countries" data-country="FR" data-flags="true">
-									</div>
-									<label class="col-5" for="password">Mot de passe :</label>
-									<input id="password" class="col-6 form-control" type="password">
-									<label class="col-5" for="confirmPass">Confirmer le mot de passe :</label>
-									<input id="confirmPass" class="col-6 form-control" type="password">
+					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalForm">
+						Valider la commande
+					</button>
+					<div class="modal fade" id="ModalForm" tabindex="-1" role="dialog" aria-labelledby="ModalFormTitle" aria-hidden="true">
+						<div class="modal-dialog modal-dialog-centered" role="document">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title" id="FormTitle">Commande :</h5>
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
 								</div>
-							</fieldset>
+								<form>
+									<div class="modal-body">
+										<fieldset>
+											<div class="row">
+												<label class="col-5" for="firstName">Nom :</label>
+												<input class="col-6 form-control" id="firstName" name="firstName" >
+												<label class="col-5" for="lastName">Prénom :</label>
+												<input class="col-6 form-control" id="lastName" name="lastName">
+												<label class="col-5" for="email">Email :</label>
+												<input class="col-6 form-control" id="email" name="email" >
+												<label class="col-5" for="phone">Numéro de téléphone :</label>
+												<input class="col-6 form-control" id="phone"type="text" name="phone" >
+												<label class="col-5" for="address">Adresse :</label>
+												<input class="col-6 form-control" id="address"type="text" name="Address" >
+												<label class="col-5" for="postalCode">Code Postal :</label>
+												<input class="col-6 form-control" id="postalCode"type="text" name="postalCode" >
+												<label class="col-5" for="postalCode">Ville :</label>
+												<input class="col-6 form-control" id="city"type="text" name="city" >
+												<label class="col-5" for="postalCode">Pays :</label>
+												<div class="bfh-selectbox bfh-countries" data-country="FR" data-flags="true">
+												</div>
+												<label class="col-5" for="password">Mot de passe :</label>
+												<input id="password" class="col-6 form-control" type="password">
+												<label class="col-5" for="confirmPass">Confirmer le mot de passe :</label>
+												<input id="confirmPass" class="col-6 form-control" type="password">
+											</div>
+										</fieldset>
+									</div>
+									<div class="modal-footer">
+										<button type="button" id="confirm" class="btn btn-primary">Confirmer</button>
+										<button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+									</form>
+								</div>
+							</div>
 						</div>
-						<div class="modal-footer">
-							<button type="button" id="confirm" class="btn btn-primary">Confirmer</button>
-							<button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-						</form>
 					</div>
 				</div>
 			</div>
@@ -206,7 +215,6 @@
 	<!-- Bootstrap core JavaScript-->
 	<script src='assets/bootstrap_v4.1.3/js/bootstrap.min.js'></script>
 	<!-- My JavaScript file-->
-	<script src='assets/js/functionsIndex.js'></script>
 	<script src='assets/js/checkForm.js'></script>
 	<!-- Bootstrap Form Helpers -->
 	<script src="assets/winmarkltd-BootstrapFormHelpers-d6770e0/dist/js/bootstrap-formhelpers.min.js"></script>

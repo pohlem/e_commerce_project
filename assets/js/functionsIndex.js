@@ -9,22 +9,35 @@ function showOneDiv(anID) {
 	div.style.display = "block";
 }
 
+
+
 $(function(){
-	price=0;
 	$('.add').click(function(e){
+	price= 0;
+		/*Collect all the elments needed in the cart*/
 		contentsCart = $('.cart').html();
 		idButton = this.id;
-		console.log(idButton);
-		$("#"+idButton).attr("disabled", "disabled");
-		console.log($('#name'+idButton).html());
+		console.log('click '+idButton);
+		$("#"+idButton).attr("disabled",true);
+		$("#quantity"+idButton).attr("disabled",true);
 		name = $('#name'+idButton).html();
 		quantity = parseInt($('#quantity'+idButton).val());
 		priceObject = parseFloat($('#price'+idButton).html());
-		price+=priceObject*quantity;
-		console.log(price);
-		$('.cart').html(contentsCart+'<div class="col-xl-3 col-xs-12">'+name+'</div><div class="col-xl-3 col-xs-12"><p>'+quantity+'</p></div><div class="col-xl-3 col-xs-12"><p>'+priceObject+'</p></div><div class="col-xl-3 col-xs-12"><p>'+quantity*priceObject+'</p></div>');
+		price=parseFloat((price+(priceObject*quantity)).toFixed(2));
+		/*Add article in cart*/
+		$('.cart').html(contentsCart+'<div class="row text-center align-items-center cart'+idButton+'"><div class="col-xl-3 col-xs-12">'+name+'</div><div class="col-xl-2 col-xs-12"><p>'+quantity+'</p></div><div class="col-xl-2 col-xs-12"><p>'+priceObject+'</p></div><div class="col-xl-3 col-xs-12"><span id="priceTotal'+idButton+'">'+quantity*priceObject+'</span></div><div class="col-xl-2 col-xs-12"><input type="button" id="cart'+idButton+'" class="remove" value="Enlever article"></div></div>');
 		$('#priceTotal').html(price);
 		e.stopImmediatePropagation();
+		/*Button who removes the article in the cart*/
+		$('.remove').click(function(){
+			currentArticle = this.id.substring(4);
+			price-=parseFloat($('#priceTotal'+currentArticle).html());
+			price=price.toFixed(2);
+			$('.'+this.id).remove();
+			$("#"+currentArticle).attr("disabled",false);
+			$("#quantity"+currentArticle).attr("disabled",false);
+			$('#priceTotal').html(price);
+		});
 	});
 
 	confirm =$('#confirm');
@@ -37,29 +50,36 @@ $(function(){
 	city = ValidName($('#city'));
 	pass = ValidPass($('#password'),$('#confirmPass'));
 
-	$('#confirm').click(ValidationForm());
+	$('#confirm').click(function(){
+
+		if(ValidationForm())
+		{
+			console.log("envoyé !");
+		}
+	});
 	$('#firstName').blur(function(){
-		ValidName($('#firstName'));
+		firstName = ValidName($('#firstName'));
 	});
 	$('#lastName').blur(function(){
-		ValidName($('#lastName'));
+		lastName = ValidName($('#lastName'));
 	});
 	$('#email').blur(function(){
-		ValidMail($('#email'));
+		email = ValidMail($('#email'));
 	});
 	$('#phone').blur(function(){
-		ValidPhone($('#phone'));
+		phone = ValidPhone($('#phone'));
 	});
 	$('#address').blur(function(){
-		ValidAddress($('#address'));
+		address = ValidAddress($('#address'));
 	});
 	$('#postalCode').blur(function(){
-		ValidPC($('#postalCode'));
+		postalCode = ValidPC($('#postalCode'));
 	});
 	$('#city').blur(function(){
-		ValidName($('#city'));
+		city = ValidName($('#city'));
 	});
 	$('#confirmPass').blur(function(){
-		validPass($('#password'),$('#confirmPass'));
+		pass = ValidPass($('#password'),$('#confirmPass'));
 	});
+
 });

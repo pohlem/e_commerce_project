@@ -16,7 +16,9 @@ img{
 body{
 	background-color: grey;
 }
-
+.cart{
+	width:100%;
+}
 
 /* Remove the navbar's default margin-bottom and rounded borders */
 .navbar {
