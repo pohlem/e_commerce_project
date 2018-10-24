@@ -33,7 +33,7 @@ nav{
   background-image: url("../img/halloween.jpg");
   background-size: 100%;
   background-repeat: no-repeat;
-  font-family: 'Scary-Halloween-Font';
+  font-family: 'Scary-Halloween-Font'!important;
 }
 .nav-link{
   color: white !important;
