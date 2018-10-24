@@ -1,25 +1,28 @@
+function checkArticle(){
+	if(price==0)
+	{
+		if(!$('#FormTitle').hasClass('noArticle'))
+		{
+			$('#FormTitle').addClass('noArticle');
+		}
+	}
+	else
+	{
+		$('#FormTitle').removeClass('noArticle');
+		$('#FormTitle').html('Commande :')
+	}
+
+	if($('#FormTitle').hasClass('noArticle'))
+	{
+		$('#FormTitle').html('Commande :Votre panier est vide !');
+	}
+}
 
 $(function(){
 		price= 0;
 		//no article ? say it !
 	$('#cart').click(function(){
-		if(price==0)
-		{
-			if(!$('#FormTitle').hasClass('noArticle'))
-			{
-				$('#FormTitle').addClass('noArticle');
-			}
-		}
-		else
-		{
-			$('#FormTitle').removeClass('noArticle');
-			$('#FormTitle').html('Commande :')
-		}
-
-		if($('#FormTitle').hasClass('noArticle'))
-		{
-			$('#FormTitle').html(	$('#FormTitle').html()+'Votre panier est vide !');
-		}
+		checkArticle();
 
 		$('#ModalForm').modal();
 	});
@@ -44,11 +47,12 @@ $(function(){
 			$('.remove').click(function(){
 				currentArticle = this.id.substring(4);
 				price-=parseFloat($('#priceTotal'+currentArticle).html());
-				price=price.toFixed(2);
+				price=parseFloat(price.toFixed(2));
 				$('.'+this.id).remove();
 				$("#"+currentArticle).attr("disabled",false);
 				$("#quantity"+currentArticle).attr("disabled",false);
 				$('#priceTotal').html(price);
+				checkArticle();
 			});
 			$('.quantityCart').keyup(function(){
 				currentArticle = this.id.substring(12);
